@@ -1,0 +1,4 @@
+
+<div id ="content">
+	<img id="okazu" src="[% c.stash.url %]"/>
+</div>

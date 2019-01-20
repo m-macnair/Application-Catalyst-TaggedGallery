@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<body style ="background:black;">
+<p> yes : [% c.stash.url %] </p>
+[% INCLUDE subject/keyboard_nav.tt %]
+[% INCLUDE subject/subject_frame.tt %]
+</body>
+</html>

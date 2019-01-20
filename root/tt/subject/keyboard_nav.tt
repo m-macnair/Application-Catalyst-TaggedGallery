@@ -1,0 +1,30 @@
+<script>
+function httpGetAsync(theUrl, callback) {
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.onreadystatechange = function() {
+		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+			callback(xmlHttp.responseText);
+		}else {
+			callback(xmlHttp.status);
+		}
+	}
+	xmlHttp.open("GET", theUrl, true);
+	xmlHttp.send();
+
+}
+var okazu_list = JSON.parse('[%c.stash.list %]');
+var counter = 0;
+document.addEventListener('keydown', event => {
+		if(event.keyCode == 8) {
+			counter--;
+		}else if(event.keyCode == 32){
+			counter++;
+		}
+		document.getElementById("okazu").src = '[% c.stash.baseurl %]' + okazu_list[counter];
+	}
+);
+</script>
+<div style="z-index:2;">
+<p style="color:white;">Space - next , backspace - previous </p>
+</div>
+
